@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Kiểm Tra Tốc Độ - Bài Tập 38a</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>⚡ KIỂM TRA PHẢN XẠ (BT38a)</h1>
+
+        <!-- Thanh công cụ tính năng mở rộng -->
+        <div class="toolbar">
+            <button id="player-btn" onclick="showPlayerInfo()">👤 Người chơi</button>
+            <button id="color-btn" onclick="changeArenaColor()">🎨 Đổi màu nền</button>
+            <div class="time-setting">
+                <label for="custom-time">Thời gian (giây):</label>
+                <input type="number" id="custom-time" value="30" min="5" max="300">
+            </div>
+        </div>
+
+        <!-- Bảng điều khiển & Thông số -->
+        <div class="dashboard">
+            <div class="stat-box">
+                <span class="label">Điểm số</span>
+                <span id="score" class="value">0</span>
+            </div>
+            <button id="start-btn" onclick="startGame()">Bắt đầu trò chơi</button>
+            <div class="stat-box">
+                <span class="label">Thời gian còn lại</span>
+                <span id="timer" class="value">30s</span>
+            </div>
+        </div>
+
+        <!-- Khu vực chơi 600px x 400px -->
+        <div id="arena">
+            <div id="target"></div>
+            <div id="overlay-msg" class="overlay">Nhấn "Bắt đầu trò chơi" để bắt đầu!</div>
+        </div>
+    </div>
+
+    <!-- Modal hiển thị kết quả khi hết giờ -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>HẾT GIỜ! ⏰</h2>
+            <p>Tổng số điểm bạn đạt được:</p>
+            <div id="final-score" class="final-score-val">0</div>
+            <button onclick="closeModalAndReset()">Chơi lại</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
